@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Launcher
+Comment=Launches Chromium with URL
+Exec=/home/kiosk/launcher.sh
+Type=Application

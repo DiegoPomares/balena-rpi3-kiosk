@@ -1,0 +1,4 @@
+# Disable screensaver
+xset s off
+# Disable energy saving features
+xset -dpms
