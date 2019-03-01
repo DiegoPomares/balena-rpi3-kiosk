@@ -16,7 +16,7 @@ RUN adduser --disabled-password --gecos "" $USER \
 # Install packages
 RUN apt-get update \
     && apt-get install -y --no-install-recommends xserver-xorg x11-xserver-utils xinit lxde-core \
-    && apt-get install -y dbus-x11 xserver-xorg-input-evdev \
+    && apt-get install -y dbus-x11 xserver-xorg-input-evdev htop \
     && apt-get install -y chromium-browser x11vnc lxterminal unclutter \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
