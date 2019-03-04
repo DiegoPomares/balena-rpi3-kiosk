@@ -4,8 +4,10 @@ URL="${URL:-https://www.youtube.com/embed/EyEyojMvveY?autoplay=1&loop=1&playlist
 RESTARTAT="${RESTARTAT:-never}"
 
 CMD="chromium-browser --noerrdialogs --disable-session-crashed-bubble --disable-infobars --no-default-browser-check --start-fullscreen"
+CMD_CLEANUP="chromium-browser --no-startup-window"
 
 while true; do
+    $CMD_CLEANUP
     $CMD "$URL" &
     PID="$!"
 

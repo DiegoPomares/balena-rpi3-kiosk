@@ -17,3 +17,5 @@ RPi3 balena image for a kiosk.
 - Chromium won't work properly when launched as root, even with the `--no-sandbox` flag. That's why both Chromium and LXDE have to be launched with a regular user, permisions have to be set to `777` to some /dev devices, and [~/.Xauthority](https://askubuntu.com/questions/300682/what-is-the-xauthority-file) created.
 - The executable `/usr/bin/lxpolkit` is removed because it's autostarted somewhere and displays an annoying error message.
 - Unclutter is used to hide the mouse cursor, was the only thing that worked reliably.
+- To avoid message popups when Chromium starts, especially when using `RESTARTAT` since the browser is terminated with SIGKILL, Chromium is executed first with `--no-startup-window` and without a URL, making it exit right away while cleaning up all previous errors from the last session.
+- Chromium is not started with `--kiosk` because it's annoying when connecting via VNC to do other stuff.
